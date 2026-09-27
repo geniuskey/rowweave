@@ -56,7 +56,7 @@ jobs:
   # Build docker image and push to docker hub
   release-docker:
     needs: [set-tag]
-    uses: ./.github/workflows/release-timely-docker.yml
+    uses: ./.github/workflows/release-docker.yml
     with:
       currentVersion: ${{ needs.set-tag.outputs.current_version }}
       tag: ${{ needs.set-tag.outputs.nightly_build_tag }}
